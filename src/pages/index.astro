@@ -1,0 +1,223 @@
+---
+import { Image } from "@astrojs/image/components"
+
+import Layout from "../layouts/Layout.astro"
+import Header from "@/components/Header.astro"
+import Section from "@/components/Section.astro"
+import Link from "@/components/Link.astro"
+import Card from "@/components/Card.astro"
+import Review from "@/components/Review.astro"
+
+import Hero from "@/images/hero.png"
+import Box from "@/images/icons/box.png"
+import Cash from "@/images/icons/cash.png"
+import Shield from "@/images/icons/shield.png"
+
+const cards = [
+  {
+    icon: Shield,
+    title: "Mais Segurança",
+    description:
+      "Ninguém deseja que as coisas saiam do controle mas isso ainda acontece. Com um seguro, você ganha o seu controle de volta e não precisa se preocupar com gastos financeiros desnecessários.",
+  },
+  {
+    icon: Box,
+    title: "Proteja O Seu Patrimônio",
+    description:
+      "Acidentes e roubos podem causar danos irreparáveis a sua casa, carro ou empresa. Com um seguro, você pode garantir que terá cobertura financeira em caso de danos ou perda desses bens, o que ajuda a evitar prejuízos financeiros significativos.",
+  },
+  {
+    icon: Cash,
+    title: "Economia",
+    description:
+      "No caso caso de acidentes, doenças ou roubos, os custos para lidar com essas situações podem ser muito altos. Com um seguro, você pode ter a garantia de que terá cobertura financeira em caso de qualquer imprevisto, evitando que precise gastar uma grande quantia de dinheiro de uma só vez.",
+  },
+]
+
+import Amil from "@/images/partners/amil.png"
+import Bradesco from "@/images/partners/bradesco.png"
+import Notredame from "@/images/partners/notredame.png"
+import PortoSeguro from "@/images/partners/porto-seguro.png"
+import Cristovao from "@/images/partners/cristovao.png"
+import Transmontano from "@/images/partners/transmontano.png"
+import SulAmerica from "@/images/partners/sul-america.png"
+import Unimed from "@/images/partners/unimed.png"
+import Marquee from "@/components/Marquee.astro"
+
+const sponsors = [
+  Amil,
+  Bradesco,
+  Notredame,
+  PortoSeguro,
+  Cristovao,
+  Transmontano,
+  SulAmerica,
+  Unimed,
+]
+
+import Person from "@/images/person.png"
+import Icon from "@/images/icon.png"
+---
+
+<Layout
+  title="Melhores seguros para carros, bens, saúde e vida. Ituaçu Seguros possui todos os seguros para você, sua família e sua empresa. Desde 1999"
+>
+  <Header />
+
+  <main>
+    <Section background="bg-blue-50" className="!gap-16 md:flex-row-reverse">
+      <Image
+        src={Hero}
+        alt="Uma mulher sorrindo com as duas mãos no coração"
+        width={243}
+        height={325}
+        class="max-h-[400px] object-contain md:h-full md:w-full"
+      />
+
+      <div class="flex flex-col gap-6">
+        <span class="font-bold uppercase text-primary-base md:text-xl">
+          Ituaçu Seguros
+        </span>
+
+        <h1>
+          Melhores Seguros Para <span class="text-accent-base">Tudo</span>
+        </h1>
+
+        <p>
+          Corretora de seguros especializada em seguro de automóvel e
+          assistência média empresarial, familiar e individual desde 1999.
+        </p>
+
+        <Link href="/" className="md:text-xl">Escolher seguro</Link>
+      </div>
+    </Section>
+
+    <Section background="bg-slate-200">
+      <h2 class="self-start text-left md:self-center">
+        Conheça Os Nossos Benefícios
+      </h2>
+
+      <ul class="flex flex-col gap-6 md:flex-row md:gap-8">
+        {cards.map((card) => <Card {...card} />)}
+      </ul>
+    </Section>
+
+    <Section className="!items-start md:gap-16" background="bg-blue-50">
+      <header class="flex flex-col gap-2">
+        <span class="font-bold text-primary-base md:text-xl">Desde 1999</span>
+
+        <h2>Sobre A <span class="text-accent-base">Ituaçu</span></h2>
+      </header>
+
+      <div class="flex w-full flex-col gap-3 overflow-hidden">
+        <h3 class="text-slate-600">Nossos Parceiros</h3>
+
+        <Marquee data={sponsors.slice(0, sponsors.length / 2 - 1)} />
+        <Marquee data={sponsors.slice(sponsors.length / 2, -1)} reverse />
+      </div>
+
+      <div class="flex w-full flex-col gap-3">
+        <h3 class="text-slate-600">Nossos Impacto</h3>
+
+        <ul
+          class="flex w-full flex-col gap-3 md:flex-row md:items-center md:gap-8"
+        >
+          <li
+            class="flex flex-col gap-4 rounded bg-primary-dark p-8 text-white md:w-full"
+          >
+            <strong class="text-6xl font-bold">2.500+</strong>
+            <h4 class="text-xl text-slate-200">Famílias atendidas</h4>
+          </li>
+          <li
+            class="flex flex-col gap-4 rounded bg-primary-dark p-8 text-white md:w-full"
+          >
+            <strong class="text-6xl font-bold">500+</strong>
+            <h4 class="text-xl text-slate-200">Empresas em carteira</h4>
+          </li>
+          <li
+            class="flex flex-col gap-4 rounded bg-primary-dark p-8 text-white md:w-full"
+          >
+            <strong class="text-6xl font-bold">24+</strong>
+            <h4 class="text-xl text-slate-200">Anos de experiência</h4>
+          </li>
+        </ul>
+      </div>
+    </Section>
+
+    <Section background="bg-slate-50">
+      <h2>Depoimentos</h2>
+
+      <div class="swiper mySwiper flex w-full flex-col gap-6">
+        <div class="swiper-wrapper">
+          <Review
+            name="Vitor Gouveia"
+            description="Tooop de mais, excelente serviço e atendimento!! Ganharam mais um cliente, sem dúvidas!!"
+          />
+          <Review
+            name="Vitor Gouveia"
+            description="Tooop de mais, excelente serviço e atendimento!! Ganharam mais um cliente, sem dúvidas!!"
+          />
+          <Review
+            name="Vitor Gouveia"
+            description="Tooop de mais, excelente serviço e atendimento!! Ganharam mais um cliente, sem dúvidas!!"
+          />
+          <Review
+            name="Vitor Gouveia"
+            description="Tooop de mais, excelente serviço e atendimento!! Ganharam mais um cliente, sem dúvidas!!"
+          />
+        </div>
+
+        <div class="swiper-pagination !static"></div>
+      </div>
+    </Section>
+
+    <Section className="!items-start md:flex-row">
+      <div class="flex w-full flex-col gap-3">
+        <h2>Venha Conhecer A Ituaçu</h2>
+
+        <p>
+          Sou alexandre aguiar corretor com 999 anos de experiência e vou te
+          ajudar a conseguir o melhor seguro...
+        </p>
+
+        <a
+          href="/sobre"
+          class="hidden font-bold text-primary-base hover:text-primary-dark md:block"
+        >
+          Ver Mais
+        </a>
+      </div>
+
+      <Image
+        src={Person}
+        alt="Foto de alexandre aguiar sorrindo"
+        width={327}
+        height={178}
+        class="w-full rounded"
+      />
+
+      <a
+        href="/sobre"
+        class="block text-xl font-bold text-primary-base hover:text-primary-dark md:hidden"
+      >
+        Ver Mais
+      </a>
+    </Section>
+  </main>
+
+  <footer class="w-full bg-sky-50 p-6">
+    <div class="m-auto flex max-w-5xl flex-col items-center gap-3">
+      <Image src={Icon} alt="logo da ituaçu seguros" width={75} height={80} />
+
+      <h2 class="text-center">
+        Contrate A Melhor Corretora De Seguros Para <span
+          class="text-primary-base">Você</span
+        >
+      </h2>
+
+      <Link href="/servicos" variant="accent" rounded="full">
+        Escolher Seguro
+      </Link>
+    </div>
+  </footer>
+</Layout>

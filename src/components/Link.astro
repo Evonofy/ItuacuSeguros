@@ -1,0 +1,30 @@
+---
+export interface Props {
+  href: string
+  rounded?: "full" | "default"
+  shadow?: boolean
+  variant?: "primary" | "accent"
+  className?: string
+}
+
+const {
+  href,
+  rounded = "default",
+  shadow = false,
+  variant = "primary",
+  className,
+} = Astro.props
+---
+
+<a
+  class={`px-6 py-3 font-bold text-white transition-colors w-max ${
+    rounded === "default" ? "rounded" : "rounded-full"
+  } ${shadow ? "shadow-primary" : ""} ${
+    variant === "primary"
+      ? "bg-primary-base hover:bg-primary-light"
+      : "bg-accent-base hover:bg-accent-dark"
+  } ${className || ""}`}
+  href={href}
+>
+  <slot />
+</a>

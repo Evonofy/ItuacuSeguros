@@ -1,0 +1,16 @@
+---
+export interface Props {
+  description: string
+  name: string
+}
+
+const { description, name } = Astro.props
+---
+
+<div class="swiper-slide !h-max gap-3 rounded border border-slate-300 p-4">
+  <p class="text-slate-600">{description}</p>
+
+  <footer class="flex w-full items-center justify-between">
+    <strong class="text-base font-bold text-slate-800">{name}</strong>
+  </footer>
+</div>
