@@ -1,0 +1,16 @@
+---
+export interface Props {
+  rounded?: "full"
+}
+
+const { rounded } = Astro.props
+---
+
+<button
+  type="submit"
+  class={`${
+    rounded ? "rounded-full" : "rounded"
+  } bg-primary-base transition-all shadow-primary px-6 py-3 text-base font-bold text-slate-100 hover:bg-primary-light md:text-lg md:w-max`}
+>
+  <slot />
+</button>

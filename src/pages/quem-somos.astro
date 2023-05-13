@@ -1,0 +1,217 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import { Image } from "@astrojs/image/components"
+import Section from "@/components/Section.astro"
+
+import Building from "@/images/building.png"
+import BuildingVertical from "@/images/building-vertical.png"
+import Person2 from "@/images/person2.png"
+import Dots from "@/images/dots.png"
+import arc from "@/images/arc.png"
+
+const features = [
+  {
+    name: "Estabelecida No Mercado",
+    description:
+      "As operadoras/seguradoras como a Ituaçu são empresas autorizadas e fiscalizadas pela SUSEP - Superitendência de Seguros Privados, a assumir riscos e indenizar seus clientes por qualquer tipo de prejuízo, de acordo com o contratado na apólice.",
+  },
+  {
+    name: "Com Credencial E Autoridade",
+    description:
+      "Para com seguros de saúde, a Agência Nacional de Saúde cabe como reguladora vinculada ao Ministério da Saúde responsável pelo setor de planos de saúde no Brasil. www.ans.gov.br | 0800 701 9656.",
+  },
+  {
+    name: "Sua Saúde Garantida!",
+    description:
+      "Corretora de seguros que atua em São Paulo no mercado de Assistência Médica desde 1999, com mais de 2.500 famílias e 500 empresas em sua carteira de clientes.",
+  },
+]
+---
+
+<Layout title="Contato | Ituaçu Seguros">
+  <section
+    class="relative flex w-full items-center justify-center overflow-hidden px-6 py-8 lg:py-14"
+  >
+    <Image
+      src={Building}
+      alt="Prédio"
+      width={1440}
+      height={355}
+      quality={100}
+      loading={"eager"}
+      fetchpriority={"high"}
+      class="absolute h-full w-full object-cover"
+      style={"z-index: -1;"}
+    />
+
+    <div
+      class="z-[100] flex max-w-[calc(1024px-(24px*2))] flex-col gap-2 rounded p-6 lg:px-14 lg:py-12"
+      style="background: rgba(241, 245, 249, 0.8);"
+    >
+      <h1>Nós Somos A Ituaçu Seguros</h1>
+      <p>
+        A Ituaçu foi criada em 1999 com o objetivo de ajudar famílias, empresas
+        e indivíduos a alcançarem mais conforto e segurança para suas vidas.
+      </p>
+    </div>
+  </section>
+
+  <Section>
+    <div class="flex flex-col items-center gap-1">
+      <p>Nosso Time</p>
+      <h2>Conheça Seus Corretores</h2>
+    </div>
+
+    <div class="flex w-full flex-col items-center gap-2 lg:w-[304px]">
+      <header class="relative h-[170px] w-[170px] lg:h-[350px] lg:w-[350px]">
+        <Image
+          src={Dots}
+          alt="Pontilhado azul para estilização extra da foto"
+          width={82}
+          height={70}
+          loading={"lazy"}
+          fetchpriority={"low"}
+          class="absolute left-0 top-0 object-cover"
+        />
+
+        <Image
+          src={arc}
+          alt="Arco azul"
+          width={22}
+          height={22}
+          loading={"lazy"}
+          fetchpriority={"low"}
+          class="absolute bottom-0 right-0 object-cover"
+        />
+
+        <Image
+          src={Person2}
+          alt="Foto do alexandre aguiar"
+          width={170}
+          height={170}
+          loading={"eager"}
+          fetchpriority={"high"}
+          class="absolute inset-0 m-auto h-full w-full rounded-full"
+        />
+      </header>
+
+      <section class="flex flex-col items-center gap-1">
+        <h3>Alexandre Aguiar</h3>
+        <p class="text-center">
+          Corretor de seguros, especializado em assistência médica empresarial,
+          familiar e individual.
+        </p>
+      </section>
+
+      <footer class="flex items-center gap-5">
+        <a
+          href="https://facebook.com"
+          class="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-slate-400 transition-colors hover:bg-slate-500"
+        >
+          <svg
+            width="11"
+            height="18"
+            viewBox="0 0 11 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.79878 7.2H8.24898H7.69548V6.61935V4.81936V4.23871H8.24898H9.41133C9.71575 4.23871 9.96483 4.00645 9.96483 3.65806V0.580645C9.96483 0.26129 9.74343 0 9.41133 0H7.39106C5.20474 0 3.68262 1.62581 3.68262 4.03548V6.56129V7.14194H3.12912H1.24722C0.859774 7.14194 0.5 7.46129 0.5 7.92581V10.0161C0.5 10.4226 0.804424 10.8 1.24722 10.8H3.07377H3.62727V11.3806V17.2161C3.62727 17.6226 3.93169 18 4.37449 18H6.97593C7.14198 18 7.28036 17.9129 7.39106 17.7968C7.50176 17.6806 7.58478 17.4774 7.58478 17.3032V11.4097V10.829H8.16596H9.41133C9.7711 10.829 10.0479 10.5968 10.1032 10.2484V10.2194V10.1903L10.4907 8.1871C10.5183 7.98387 10.4907 7.75161 10.3246 7.51935C10.2693 7.37419 10.0202 7.22903 9.79878 7.2Z"
+              fill="#1E293B"></path>
+          </svg>
+        </a>
+
+        <a
+          href="https://facebook.com"
+          class="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-slate-400 transition-colors hover:bg-slate-500"
+        >
+          <svg
+            width="19"
+            height="14"
+            viewBox="0 0 19 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.4968 2.41096L17.6 1.09589C17.9194 0.739726 18.0065 0.465753 18.0355 0.328767C17.1645 0.821918 16.3516 0.986301 15.829 0.986301H15.6258L15.5097 0.876712C14.8129 0.30137 13.9419 0 13.0129 0C10.9806 0 9.38387 1.58904 9.38387 3.42466C9.38387 3.53425 9.38387 3.69863 9.4129 3.80822L9.5 4.35616L8.89032 4.32877C5.17419 4.21918 2.12581 1.20548 1.63226 0.684932C0.819355 2.05479 1.28387 3.36986 1.77742 4.19178L2.76452 5.72603L1.19677 4.90411C1.22581 6.05479 1.69032 6.9589 2.59032 7.61644L3.37419 8.16438L2.59032 8.46575C3.08387 9.86301 4.1871 10.4384 5 10.6575L6.07419 10.9315L5.05806 11.589C3.43226 12.6849 1.4 12.6027 0.5 12.5205C2.32903 13.726 4.50645 14 6.01613 14C7.14839 14 7.99032 13.8904 8.19355 13.8082C16.3226 12 16.7 5.15068 16.7 3.78082V3.58904L16.8742 3.47945C17.8613 2.60274 18.2677 2.13699 18.5 1.86301C18.4129 1.89041 18.2968 1.94521 18.1806 1.9726L16.4968 2.41096Z"
+              fill="#1E293B"></path>
+          </svg>
+        </a>
+
+        <a
+          href="https://facebook.com"
+          class="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-slate-400 transition-colors hover:bg-slate-500"
+        >
+          <svg
+            width="19"
+            height="18"
+            viewBox="0 0 19 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.52887 12.3677C11.3888 12.3677 12.8966 10.8599 12.8966 8.99994C12.8966 7.13999 11.3888 5.6322 9.52887 5.6322C7.66892 5.6322 6.16113 7.13999 6.16113 8.99994C6.16113 10.8599 7.66892 12.3677 9.52887 12.3677Z"
+              fill="#1E293B"></path>
+            <path
+              d="M13.1871 0H5.8129C2.88064 0 0.5 2.38064 0.5 5.3129V12.629C0.5 15.6194 2.88064 18 5.8129 18H13.129C16.1194 18 18.5 15.6194 18.5 12.6871V5.3129C18.5 2.38064 16.1194 0 13.1871 0ZM9.52903 13.4129C7.06129 13.4129 5.11613 11.4097 5.11613 9C5.11613 6.59032 7.09032 4.5871 9.52903 4.5871C11.9387 4.5871 13.9129 6.59032 13.9129 9C13.9129 11.4097 11.9677 13.4129 9.52903 13.4129ZM15.6258 4.99355C15.3355 5.3129 14.9 5.4871 14.4065 5.4871C13.971 5.4871 13.5355 5.3129 13.1871 4.99355C12.8677 4.67419 12.6935 4.26774 12.6935 3.77419C12.6935 3.28065 12.8677 2.90323 13.1871 2.55484C13.5065 2.20645 13.9129 2.03226 14.4065 2.03226C14.8419 2.03226 15.3065 2.20645 15.6258 2.52581C15.9161 2.90323 16.1194 3.33871 16.1194 3.80323C16.0903 4.26774 15.9161 4.67419 15.6258 4.99355Z"
+              fill="#1E293B"></path>
+            <path
+              d="M14.436 3.07739C14.0586 3.07739 13.7393 3.39675 13.7393 3.77417C13.7393 4.15159 14.0586 4.47094 14.436 4.47094C14.8135 4.47094 15.1328 4.15159 15.1328 3.77417C15.1328 3.39675 14.8425 3.07739 14.436 3.07739Z"
+              fill="#1E293B"></path>
+          </svg>
+        </a>
+      </footer>
+    </div>
+  </Section>
+
+  <Section>
+    <h2>Saiba Mais Sobre Nossa Corretora</h2>
+
+    <div class="flex flex-col gap-6 lg:flex-row-reverse">
+      <Image
+        src={BuildingVertical}
+        alt="Prédio"
+        width={472}
+        height={688}
+        quality={100}
+        loading={"lazy"}
+        fetchpriority={"low"}
+        class="w-full rounded object-cover lg:h-full"
+      />
+
+      <ol class="flex w-full flex-col gap-8">
+        {
+          features.map((feature, index) => (
+            <li class="flex flex-col gap-3">
+              <header class="flex w-full items-center gap-2">
+                <div class="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-primary-dark font-bold text-slate-50 lg:text-xl">
+                  {(index + 1).toString().padStart(2, "0")}
+                </div>
+                <h3 class="font-bold text-slate-900">{feature.name}</h3>
+              </header>
+
+              <p class="lg:pl-[60px]">{feature.description}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </Section>
+
+  <footer class="w-full bg-primary-dark p-6 md:py-16">
+    <div class="m-auto flex max-w-5xl flex-col items-center gap-3">
+      <h2 class="text-center text-slate-50">O Que Você Está Esperando?</h2>
+
+      <p class="text-center text-slate-100">
+        Começe A Procurar Agora O Seu Seguro Ideal
+      </p>
+
+      <a
+        href="/servicos"
+        rel="prefetch"
+        class="rounded-full bg-primary-base px-6 py-3 font-bold text-slate-50 hover:bg-primary-light"
+        >Explorar Seguros!</a
+      >
+    </div>
+  </footer>
+</Layout>

@@ -1,0 +1,74 @@
+---
+import { Image } from "@astrojs/image/components"
+
+export interface Props {
+  icon: string | string[]
+  label: string
+  name: string
+  value: string
+  checked?: boolean
+}
+
+const { label, name, value, checked = false, icon } = Astro.props
+
+const id = Math.random().toString()
+---
+
+<input
+  {id}
+  {name}
+  {checked}
+  {value}
+  class="peer hidden"
+  type="radio"
+  required
+/>
+
+<label
+  for={id}
+  class="flex cursor-pointer flex-col items-center gap-2 overflow-hidden rounded border border-slate-300 px-3 py-6 transition-all hover:brightness-95 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:hover:brightness-105"
+>
+  {
+    icon.hasOwnProperty("length") ? (
+      <div class="flex items-center gap-1">
+        {(icon as string[]).map((url) => (
+          <Image
+            src={url}
+            alt={name}
+            width={35}
+            height={35}
+            quality={100}
+            loading={"lazy"}
+            format={"webp"}
+          />
+        ))}
+      </div>
+    ) : (
+      <Image
+        src={icon as string}
+        alt={name}
+        width={35}
+        height={35}
+        quality={100}
+        loading={"lazy"}
+        format={"webp"}
+      />
+    )
+  }
+
+  <p class="font-bold text-slate-900">{label}</p>
+</label>
+
+<style>
+  label {
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+  }
+
+  input:checked + label {
+    background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 100%);
+  }
+</style>

@@ -1,0 +1,192 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Section from "@/components/Section.astro"
+import Link from "@/components/Link.astro"
+import Radio from "@/components/Form/Radio.astro"
+import SelectCard from "@/components/Form/SelectCard.astro"
+
+import Life from "@/images/icons/life.png"
+import Dentist from "@/images/icons/dentist.png"
+import House from "@/images/icons/house.png"
+import Car from "@/images/icons/car.png"
+import Dollar from "@/images/icons/dollar.png"
+import Button from "@/components/Form/Button.astro"
+import { SearchBox } from "@/components/SearchBox"
+
+type Insurance = {
+  name: string
+  description: string
+  siteUrl: string
+  type: string
+  pros: string[]
+}
+
+const data: Insurance[] = [
+  {
+    name: "Seguro",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor et nisi sed vulputate. Sed dapibus accumsan metus, a finibus sapien volutpat sed.",
+    pros: ["Benefício 1", "Benefício 2", "Benefício 3"],
+    siteUrl: "https://www.google.com",
+    type: "vida",
+  },
+  {
+    name: "Outro",
+    description: "Call of duty",
+    pros: ["Benefício 1", "Benefício 2", "Benefício 3"],
+    siteUrl: "https://www.google.com",
+    type: "odontológico",
+  },
+]
+
+function removeDuplicates(array: any[]) {
+  return [...new Set(array)]
+}
+
+const insuranceTypes = removeDuplicates(data.map((insurance) => insurance.type))
+---
+
+<Layout title="Serviços | Ituaçu Seguros">
+  <Section background="!bg-slate-50" className="!items-start">
+    <h1>Realizar Autoatendimento</h1>
+
+    <p>
+      Preencha as informações no formulário abaixo para achar o seguro ideal.
+    </p>
+
+    <Link href="#autoatendimento" rounded="full">Procurar Seguro Ideal</Link>
+
+    <a
+      href="#seguros"
+      class="font-bold text-slate-500 transition-colors hover:text-slate-400 lg:text-xl"
+    >
+      Pesquisar todos os seguros
+    </a>
+  </Section>
+
+  <Section
+    id="autoatendimento"
+    background="!bg-slate-50"
+    className="!items-start !gap-16"
+  >
+    <h2 class="text-slate-700">Qual tipo de seguro você precisa?</h2>
+
+    <form class="flex w-full flex-col gap-8">
+      <div class="flex w-max flex-col gap-3">
+        <h3 class="font-normal text-slate-500">
+          Selecione A Modalidade Do Seguro
+        </h3>
+
+        <Radio value="single" label="🧍Para Mim" name="modality" checked />
+        <Radio value="multiple" label="👪 Para Minha Família" name="modality" />
+        <Radio
+          value="enterprise"
+          label="🏢 Para Minha Empresa"
+          name="modality"
+        />
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <h3 class="font-normal text-slate-500">Selecione o tipo do seguro</h3>
+
+        <ul class="flex w-full flex-wrap gap-4 lg:flex-nowrap">
+          <li class="w-[calc(50%-8px)] lg:w-full">
+            <SelectCard
+              value="life"
+              icon={Life}
+              label="Vida"
+              name="type"
+              checked
+            />
+          </li>
+          <li class="w-[calc(50%-8px)] lg:w-full">
+            <SelectCard
+              value="dental"
+              icon={Dentist}
+              label="Odontológico"
+              name="type"
+            />
+          </li>
+          <li class="w-[calc(50%-8px)] lg:w-full">
+            <SelectCard value="wealth" icon={House} label="Bens" name="type" />
+          </li>
+          <li class="w-[calc(50%-8px)] lg:w-full">
+            <SelectCard value="cars" icon={Car} label="Carros" name="type" />
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <h3 class="font-normal text-slate-500">
+          Selecione a quantia que pode gastar
+        </h3>
+
+        <ul class="flex w-full flex-wrap gap-4 lg:flex-nowrap">
+          <li class="w-full">
+            <SelectCard
+              value="low"
+              icon={Dollar}
+              label="R$ 500 - R$ 1000"
+              name="value"
+              checked
+            />
+          </li>
+
+          <li class="w-full">
+            <SelectCard
+              value="mid"
+              icon={[Dollar, Dollar]}
+              label="R$ 1000 - R$ 1500"
+              name="value"
+            />
+          </li>
+
+          <li class="w-full">
+            <SelectCard
+              value="high"
+              icon={[Dollar, Dollar, Dollar]}
+              label="R$ 1500 - R$ 2000"
+              name="value"
+            />
+          </li>
+        </ul>
+      </div>
+
+      <Button rounded="full">Contratar seguro</Button>
+    </form>
+  </Section>
+
+  <SearchBox client:visible data={data} insuranceTypes={insuranceTypes} />
+</Layout>
+
+<style>
+  .pill-active {
+    @apply !bg-primary-base !text-slate-50;
+  }
+
+  .pill-active svg {
+    display: inline;
+  }
+</style>
+
+<script>
+  // handle form
+  function main() {
+    const form = document.querySelector<HTMLFormElement>("form")
+
+    if (!form) {
+      console.log("could not find form")
+      return
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault()
+
+      const formData = new FormData(form)
+
+      console.log(Object.fromEntries(formData.entries()))
+    })
+  }
+
+  document.addEventListener("DOMContentLoaded", main)
+</script>

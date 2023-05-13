@@ -2,7 +2,6 @@
 import { Image } from "@astrojs/image/components"
 
 import Layout from "../layouts/Layout.astro"
-import Header from "@/components/Header.astro"
 import Section from "@/components/Section.astro"
 import Link from "@/components/Link.astro"
 import Card from "@/components/Card.astro"
@@ -18,19 +17,19 @@ const cards = [
     icon: Shield,
     title: "Mais Segurança",
     description:
-      "Ninguém deseja que as coisas saiam do controle mas isso ainda acontece. Com um seguro, você ganha o seu controle de volta e não precisa se preocupar com gastos financeiros desnecessários.",
+      "Ninguém deseja que as coisas saiam do controle mas isso ainda acontece. Com um seguro, você ganha o seu controle e pode voltar a ficar tranquilo.",
   },
   {
     icon: Box,
     title: "Proteja O Seu Patrimônio",
     description:
-      "Acidentes e roubos podem causar danos irreparáveis a sua casa, carro ou empresa. Com um seguro, você pode garantir que terá cobertura financeira em caso de danos ou perda desses bens, o que ajuda a evitar prejuízos financeiros significativos.",
+      "Acidentes e roubos podem causar danos irreparáveis a sua casa, carro ou empresa. Com um seguro, você pode garantir que terá  suporte financeiro quando precisar.",
   },
   {
     icon: Cash,
     title: "Economia",
     description:
-      "No caso caso de acidentes, doenças ou roubos, os custos para lidar com essas situações podem ser muito altos. Com um seguro, você pode ter a garantia de que terá cobertura financeira em caso de qualquer imprevisto, evitando que precise gastar uma grande quantia de dinheiro de uma só vez.",
+      "No caso caso de acidentes, doenças ou roubos, os custos para lidar com essas situações podem ser muito altos. Com um seguro, você economiza muito no caso de qualquer imprevisto. ",
   },
 ]
 
@@ -62,8 +61,6 @@ import Icon from "@/images/icon.png"
 <Layout
   title="Melhores seguros para carros, bens, saúde e vida. Ituaçu Seguros possui todos os seguros para você, sua família e sua empresa. Desde 1999"
 >
-  <Header />
-
   <main>
     <Section background="bg-blue-50" className="!gap-16 md:flex-row-reverse">
       <Image
@@ -71,7 +68,10 @@ import Icon from "@/images/icon.png"
         alt="Uma mulher sorrindo com as duas mãos no coração"
         width={243}
         height={325}
-        class="max-h-[400px] object-contain md:h-full md:w-full"
+        class="h-[240px] max-h-[400px] object-contain md:h-full md:w-full"
+        format="webp"
+        quality={100}
+        loading={"eager"}
       />
 
       <div class="flex flex-col gap-6">
@@ -88,7 +88,7 @@ import Icon from "@/images/icon.png"
           assistência média empresarial, familiar e individual desde 1999.
         </p>
 
-        <Link href="/" className="md:text-xl">Escolher seguro</Link>
+        <Link shadow href="/" className="md:text-xl">Escolher seguro</Link>
       </div>
     </Section>
 
@@ -102,23 +102,21 @@ import Icon from "@/images/icon.png"
       </ul>
     </Section>
 
-    <Section className="!items-start md:gap-16" background="bg-blue-50">
+    <Section className="!items-start !gap-8 md:gap-16" background="bg-blue-50">
       <header class="flex flex-col gap-2">
         <span class="font-bold text-primary-base md:text-xl">Desde 1999</span>
 
         <h2>Sobre A <span class="text-accent-base">Ituaçu</span></h2>
+
+        <p>Conheça nossos parceiros e nosso impacto no mundo.</p>
       </header>
 
       <div class="flex w-full flex-col gap-3 overflow-hidden">
-        <h3 class="text-slate-600">Nossos Parceiros</h3>
-
         <Marquee data={sponsors.slice(0, sponsors.length / 2 - 1)} />
         <Marquee data={sponsors.slice(sponsors.length / 2, -1)} reverse />
       </div>
 
       <div class="flex w-full flex-col gap-3">
-        <h3 class="text-slate-600">Nossos Impacto</h3>
-
         <ul
           class="flex w-full flex-col gap-3 md:flex-row md:items-center md:gap-8"
         >
@@ -194,6 +192,7 @@ import Icon from "@/images/icon.png"
         width={327}
         height={178}
         class="w-full rounded"
+        loading={"lazy"}
       />
 
       <a
@@ -205,9 +204,15 @@ import Icon from "@/images/icon.png"
     </Section>
   </main>
 
-  <footer class="w-full bg-sky-50 p-6">
+  <footer class="w-full bg-sky-50 p-6 md:py-16">
     <div class="m-auto flex max-w-5xl flex-col items-center gap-3">
-      <Image src={Icon} alt="logo da ituaçu seguros" width={75} height={80} />
+      <Image
+        src={Icon}
+        alt="logo da ituaçu seguros"
+        width={75}
+        height={80}
+        loading={"lazy"}
+      />
 
       <h2 class="text-center">
         Contrate A Melhor Corretora De Seguros Para <span

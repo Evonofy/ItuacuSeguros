@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ituacu-seguros.vercel.app/sitemap-index.xml

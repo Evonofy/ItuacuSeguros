@@ -1,0 +1,162 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Section from "@/components/Section.astro"
+import { Image } from "@astrojs/image/components"
+import Input from "@/components/Form/Input.astro"
+
+import Phone from "@/images/icons/phone.svg"
+import PhoneDark from "@/images/icons/phone-dark.svg"
+import Pin from "@/images/icons/pin.svg"
+import GoogleMaps from "@/images/icons/google-maps.png"
+import Waze from "@/images/icons/waze.png"
+import Map from "@/images/map.png"
+
+import At from "@/images/icons/email.svg"
+import Button from "@/components/Form/Button.astro"
+---
+
+<Layout title="Contato | Ituaçu Seguros">
+  <Section background="!bg-slate-50">
+    <h2 class="self-start">Informações De Contato</h2>
+
+    <ul class="flex w-full items-stretch gap-8">
+      <li
+        class="flex w-full max-w-[220px] flex-col items-center justify-center gap-3 rounded bg-primary-base px-3 py-6 text-slate-50"
+      >
+        <Image
+          src={Phone}
+          alt="Ícone de telefone"
+          width={30}
+          height={30}
+          loading={"eager"}
+          quality={70}
+        />
+
+        <h3 class="text-center font-bold text-slate-50">(11) 95951-5336</h3>
+      </li>
+
+      <li
+        class="flex w-full max-w-[220px] flex-col items-center justify-center gap-3 rounded bg-primary-base px-3 py-6 text-slate-50"
+      >
+        <Image
+          src={Pin}
+          alt="Ícone de alfinete"
+          width={30}
+          height={30}
+          loading={"eager"}
+          quality={70}
+        />
+
+        <h3 class="text-center font-bold text-slate-50">CEP 04570-000</h3>
+      </li>
+    </ul>
+  </Section>
+
+  <Section
+    background="!bg-gray-50 !border-y !border-gray-200"
+    className="!items-start lg:flex-row lg:!items-center"
+  >
+    <div class="flex w-full flex-col gap-3">
+      <h2>Localização</h2>
+
+      <div class="flex flex-col gap-2">
+        <p>Rua Lorem Ipsum - Campo Grande</p>
+        <p>N° 445</p>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <button
+          class="flex w-max items-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-3 font-bold text-slate-600 transition-colors hover:bg-slate-100"
+        >
+          Usar Google Maps
+          <Image
+            src={GoogleMaps}
+            alt="Logo do google maps"
+            width={12}
+            height={18}
+            loading={"eager"}
+            quality={70}
+          />
+        </button>
+        <button
+          class="flex w-max items-center gap-2 rounded-full bg-sky-500 px-8 py-3 font-bold text-slate-50 transition-colors hover:bg-sky-600"
+        >
+          Usar Waze
+          <Image
+            src={Waze}
+            alt="Logo do waze"
+            width={18}
+            height={18}
+            loading={"eager"}
+            quality={70}
+          />
+        </button>
+      </div>
+    </div>
+
+    <Image
+      src={Map}
+      alt="Mapa da região de onde se localiza a empresa"
+      width={327}
+      height={250}
+      loading={"lazy"}
+      quality={100}
+      class="w-full"
+    />
+  </Section>
+
+  <Section background="!bg-slate-50" className="!items-start lg:!items-center">
+    <h2>Entre Em Contato Conosco!</h2>
+
+    <form class="flex w-full flex-col gap-3 lg:max-w-[304px]">
+      <Input required name="name" placeholder="Nome" type="text" />
+      <Input
+        required
+        name="email"
+        placeholder="E-mail"
+        type="email"
+        leftIcon={At}
+      />
+      <Input
+        required
+        name="phone"
+        placeholder="Telefone"
+        type="text"
+        leftIcon={PhoneDark}
+      />
+      <Input
+        required
+        name="description"
+        placeholder="Motivo do contato"
+        type="text"
+        textarea
+      />
+
+      <Button>Entrar em contato</Button>
+    </form>
+  </Section>
+</Layout>
+
+<script>
+  function main() {
+    const form = document.querySelector<HTMLFormElement>("form")
+
+    if (!form) {
+      console.log("could not find form")
+      return
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault()
+
+      const formData = new FormData(form)
+
+      console.log(
+        "enviar email",
+        console.log(Object.fromEntries(formData.entries()))
+      )
+    })
+  }
+
+  document.addEventListener("DOMContentLoaded", main)
+</script>

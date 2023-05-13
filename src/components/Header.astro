@@ -1,33 +1,51 @@
 ---
 import Link from "./Link.astro"
+
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname // removes the first "/"
+
+const pages = [
+  {
+    name: "Home",
+    slug: "/",
+  },
+  {
+    name: "Serviços",
+    slug: "/servicos",
+  },
+  {
+    name: "Contato",
+    slug: "/contato",
+  },
+  {
+    name: "Quem Somos",
+    slug: "/quem-somos",
+  },
+]
 ---
 
 <header class="w-full border-b border-slate-200 bg-slate-100 px-6 py-3">
-  <nav class="m-auto flex max-w-5xl items-center justify-between md:p-6">
+  <nav class="m-auto flex max-w-5xl items-center justify-between md:px-6">
     <div class="h-[50px] w-[50px] rounded bg-accent-base"></div>
 
     <div class="flex items-center gap-6">
-      <a href="/" class="hidden text-slate-800 hover:text-slate-600 md:block"
-        >Home</a
-      >
-      <a
-        href="/servicos"
-        class="hidden text-slate-800 hover:text-slate-600 md:block"
-      >
-        Serviços
-      </a>
-      <a
-        href="/contato"
-        class="hidden text-slate-800 hover:text-slate-600 md:block">Contato</a
-      >
-      <a
-        href="/quem-somos"
-        class="hidden text-slate-800 hover:text-slate-600 md:block"
-      >
-        Quem Somos
-      </a>
+      {
+        pages.map((page) => (
+          <a
+            href={page.slug}
+            class:list={[
+              "hidden md:block",
+              currentPath === page.slug
+                ? "text-primary-base"
+                : "text-slate-800 hover:text-slate-600",
+            ]}
+          >
+            {page.name}
+          </a>
+        ))
+      }
 
-      <Link href="/servicos" rounded="full" className="lg:!rounded">
+      <Link prefetch href="/servicos" rounded="full" className="lg:!rounded">
         Escolher seguro
       </Link>
     </div>

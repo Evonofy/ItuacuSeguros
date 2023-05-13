@@ -5,6 +5,7 @@ export interface Props {
   shadow?: boolean
   variant?: "primary" | "accent"
   className?: string
+  prefetch?: boolean
 }
 
 const {
@@ -13,11 +14,12 @@ const {
   shadow = false,
   variant = "primary",
   className,
+  prefetch,
 } = Astro.props
 ---
 
 <a
-  class={`px-6 py-3 font-bold text-white transition-colors w-max ${
+  class={`px-6 py-3 font-bold text-white transition-colors w-max lg:text-xl ${
     rounded === "default" ? "rounded" : "rounded-full"
   } ${shadow ? "shadow-primary" : ""} ${
     variant === "primary"
@@ -25,6 +27,7 @@ const {
       : "bg-accent-base hover:bg-accent-dark"
   } ${className || ""}`}
   href={href}
+  rel={prefetch ? "prefetch" : ""}
 >
   <slot />
 </a>
