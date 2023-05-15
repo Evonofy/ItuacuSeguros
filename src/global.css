@@ -18,32 +18,6 @@ html {
   background-color: #f6f6f6;
 }
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.swiper-slide {
-  height: max-content !important;
-}
-
-:root {
-  --swiper-pagination-bullet-size: 12px;
-  --swiper-pagination-bullet-inactive-color: #d4d4d4;
-  --swiper-theme-color: #6687ff;
-}
-
 @layer base {
   h1 {
     @apply text-3xl font-bold text-slate-800 md:text-6xl;

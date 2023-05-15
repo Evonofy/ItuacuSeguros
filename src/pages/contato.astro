@@ -4,9 +4,7 @@ import Section from "@/components/Section.astro"
 import { Image } from "@astrojs/image/components"
 import Input from "@/components/Form/Input.astro"
 
-import Phone from "@/images/icons/phone.svg"
 import PhoneDark from "@/images/icons/phone-dark.svg"
-import Pin from "@/images/icons/pin.svg"
 import GoogleMaps from "@/images/icons/google-maps.png"
 import Waze from "@/images/icons/waze.png"
 import Map from "@/images/map.png"
@@ -16,59 +14,74 @@ import Button from "@/components/Form/Button.astro"
 ---
 
 <Layout title="Contato | Ituaçu Seguros">
-  <Section background="!bg-slate-50">
-    <h2 class="self-start">Informações De Contato</h2>
-
-    <ul class="flex w-full items-stretch gap-8">
-      <li
-        class="flex w-full max-w-[220px] flex-col items-center justify-center gap-3 rounded bg-primary-base px-3 py-6 text-slate-50"
-      >
-        <Image
-          src={Phone}
-          alt="Ícone de telefone"
-          width={30}
-          height={30}
-          loading={"eager"}
-          quality={70}
-        />
-
-        <h3 class="text-center font-bold text-slate-50">(11) 95951-5336</h3>
-      </li>
-
-      <li
-        class="flex w-full max-w-[220px] flex-col items-center justify-center gap-3 rounded bg-primary-base px-3 py-6 text-slate-50"
-      >
-        <Image
-          src={Pin}
-          alt="Ícone de alfinete"
-          width={30}
-          height={30}
-          loading={"eager"}
-          quality={70}
-        />
-
-        <h3 class="text-center font-bold text-slate-50">CEP 04570-000</h3>
-      </li>
-    </ul>
-  </Section>
-
   <Section
     background="!bg-gray-50 !border-y !border-gray-200"
     className="!items-start lg:flex-row lg:!items-center"
   >
     <div class="flex w-full flex-col gap-3">
-      <h2>Localização</h2>
+      <h2 class="text-primary-dark">Venha nos encontrar</h2>
 
-      <div class="flex flex-col gap-2">
-        <p>Rua Lorem Ipsum - Campo Grande</p>
-        <p>N° 445</p>
+      <div class="flex w-full flex-col gap-3 lg:flex-row lg:gap-8">
+        <div class="flex flex-col gap-3">
+          <p>Praça Pedro Lessa</p>
+          <p>Centro. São Paulo, SP.</p>
+          <p>110 Cj. 1819</p>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span
+            class="flex items-center justify-center gap-3 rounded-xl border-2 border-sky-400 px-6 py-3 font-bold text-black"
+          >
+            <svg
+              width="21"
+              height="24"
+              viewBox="0 0 21 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.5 10.1818C18.5 16.5455 10.5 22 10.5 22C10.5 22 2.5 16.5455 2.5 10.1818C2.5 8.01186 3.34285 5.93079 4.84315 4.3964C6.34344 2.86201 8.37827 2 10.5 2C12.6217 2 14.6565 2.86201 16.1569 4.3964C17.6572 5.93079 18.5 8.01186 18.5 10.1818Z"
+                stroke="#38BDF8"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M10.5713 12.6852C11.952 12.6852 13.0713 11.5659 13.0713 10.1852C13.0713 8.80447 11.952 7.68518 10.5713 7.68518C9.19054 7.68518 8.07129 8.80447 8.07129 10.1852C8.07129 11.5659 9.19054 12.6852 10.5713 12.6852Z"
+                stroke="#38BDF8"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            <p class="font-bold text-inherit">04570-000</p>
+          </span>
+          <span
+            class="flex items-center justify-center gap-3 rounded-xl border-2 border-sky-400 px-6 py-3 font-bold text-black"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 5.61538C1 14.1118 7.88821 21 16.3846 21H18.6923C19.3043 21 19.8913 20.7569 20.3241 20.3241C20.7569 19.8913 21 19.3043 21 18.6923V17.2851C21 16.7559 20.64 16.2944 20.1262 16.1662L15.5897 15.0318C15.1385 14.919 14.6646 15.0882 14.3867 15.4595L13.3918 16.7856C13.1026 17.1713 12.6031 17.3415 12.1508 17.1754C10.4717 16.5581 8.94682 15.5832 7.68183 14.3182C6.41683 13.0532 5.44192 11.5283 4.82462 9.84923C4.65846 9.39692 4.82872 8.89744 5.21436 8.60821L6.54051 7.61333C6.91282 7.33538 7.08103 6.86051 6.96821 6.41026L5.83385 1.87385C5.77142 1.6243 5.62741 1.40277 5.42467 1.24445C5.22193 1.08612 4.97211 1.00009 4.71487 1H3.30769C2.69565 1 2.10868 1.24313 1.67591 1.67591C1.24313 2.10868 1 2.69565 1 3.30769V5.61538Z"
+                stroke="#38BDF8"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            <p class="font-bold text-inherit">95951-5336</p>
+          </span>
+        </div>
       </div>
+    </div>
 
-      <div class="flex flex-col gap-6">
+    <div class="flex w-full flex-col gap-3 lg:flex-col-reverse">
+      <div class="flex w-full flex-row items-center gap-4">
         <button
-          class="flex w-max items-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-3 font-bold text-slate-600 transition-colors hover:bg-slate-100"
+          class="flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-3 font-bold text-slate-600 transition-colors hover:bg-slate-100"
         >
-          Usar Google Maps
+          Maps
           <Image
             src={GoogleMaps}
             alt="Logo do google maps"
@@ -79,9 +92,9 @@ import Button from "@/components/Form/Button.astro"
           />
         </button>
         <button
-          class="flex w-max items-center gap-2 rounded-full bg-sky-500 px-8 py-3 font-bold text-slate-50 transition-colors hover:bg-sky-600"
+          class="flex w-full items-center justify-center gap-2 rounded-full bg-sky-500 px-8 py-3 font-bold text-slate-50 transition-colors hover:bg-sky-600"
         >
-          Usar Waze
+          Waze
           <Image
             src={Waze}
             alt="Logo do waze"
@@ -92,38 +105,41 @@ import Button from "@/components/Form/Button.astro"
           />
         </button>
       </div>
-    </div>
 
-    <Image
-      src={Map}
-      alt="Mapa da região de onde se localiza a empresa"
-      width={327}
-      height={250}
-      loading={"lazy"}
-      quality={100}
-      class="w-full"
-    />
+      <Image
+        src={Map}
+        alt="Mapa da região de onde se localiza a empresa"
+        width={327}
+        height={250}
+        loading={"lazy"}
+        quality={100}
+        class="w-full"
+      />
+    </div>
   </Section>
 
   <Section background="!bg-slate-50" className="!items-start lg:!items-center">
     <h2>Entre Em Contato Conosco!</h2>
 
-    <form class="flex w-full flex-col gap-3 lg:max-w-[304px]">
-      <Input required name="name" placeholder="Nome" type="text" />
-      <Input
-        required
-        name="email"
-        placeholder="E-mail"
-        type="email"
-        leftIcon={At}
-      />
-      <Input
-        required
-        name="phone"
-        placeholder="Telefone"
-        type="text"
-        leftIcon={PhoneDark}
-      />
+    <form class="flex w-full flex-col gap-3 lg:max-w-[975px] lg:items-center">
+      <div class="flex w-full flex-col gap-3 lg:flex-row">
+        <Input required name="name" placeholder="Nome" type="text" />
+        <Input
+          required
+          name="email"
+          placeholder="E-mail"
+          type="email"
+          leftIcon={At}
+        />
+        <Input
+          required
+          name="phone"
+          placeholder="Telefone"
+          type="text"
+          leftIcon={PhoneDark}
+        />
+      </div>
+
       <Input
         required
         name="description"
@@ -132,7 +148,7 @@ import Button from "@/components/Form/Button.astro"
         textarea
       />
 
-      <Button>Entrar em contato</Button>
+      <Button className="lg:w-[304px]">Entrar em contato</Button>
     </form>
   </Section>
 </Layout>

@@ -1,9 +1,6 @@
 ---
 import Link from "./Link.astro"
 
-const pathname = new URL(Astro.request.url).pathname
-const currentPath = pathname // removes the first "/"
-
 const pages = [
   {
     name: "Home",
@@ -32,13 +29,9 @@ const pages = [
       {
         pages.map((page) => (
           <a
+            data-nav
             href={page.slug}
-            class:list={[
-              "hidden md:block",
-              currentPath === page.slug
-                ? "text-primary-base"
-                : "text-slate-800 hover:text-slate-600",
-            ]}
+            class:list={"hidden md:block text-slate-800 hover:text-slate-500"}
           >
             {page.name}
           </a>
@@ -51,3 +44,25 @@ const pages = [
     </div>
   </nav>
 </header>
+
+<style>
+  .selected {
+    @apply !text-primary-base;
+  }
+</style>
+
+<script defer>
+  function main() {
+    const pathname = location.pathname
+    /** @type {HTMLAnchorElement[]} */
+    const links = document.querySelectorAll("nav a[data-nav]")
+
+    links.forEach((link) => {
+      if (link.pathname === pathname) {
+        link.classList.add("selected")
+      }
+    })
+  }
+
+  document.addEventListener("DOMContentLoaded", main)
+</script>

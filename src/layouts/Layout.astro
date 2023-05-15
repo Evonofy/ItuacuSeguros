@@ -32,28 +32,5 @@ const { title } = Astro.props
     <main>
       <slot />
     </main>
-
-    <script defer type="module">
-      import "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
-      const desktop = window.matchMedia("(min-width: 1024px)")
-
-      var swiper = new Swiper(".mySwiper", {
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        loop: true,
-        slidesPerView: desktop.matches ? 2 : 1,
-        spaceBetween: desktop.matches ? 32 : 12,
-      })
-
-      desktop.addEventListener("change", () => {
-        if (desktop.matches) {
-          swiper.params.slidesPerView = 2
-        } else {
-          swiper.params.slidesPerView = 1
-        }
-      })
-    </script>
   </body>
 </html>
