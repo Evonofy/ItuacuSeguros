@@ -10,7 +10,7 @@
 
 <div align="center">
 
-   | [Notion](hhttps://evonofy.notion.site/Sobre-O-Projeto-61b07f97bd934afb94690470796c88b7)    | 
+   | [Notion](https://evonofy.notion.site/Sobre-O-Projeto-61b07f97bd934afb94690470796c88b7)    | 
    | ------------------------------------------------------------------------------------------ |
 
 </div>
