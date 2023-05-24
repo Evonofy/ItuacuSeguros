@@ -1,18 +1,17 @@
 <div align="center">
 
-   # [`🏘️ Ituaçu Seguros`](https://ituacu-seguros.vercel.app/) <!-- omit in toc --> 
-
+   # [`🏘️ Ituaçu Seguros`](https://ituacu-seguros.vercel.app/) <!-- omit in toc -->
 
 </div>
 
-🏘️ A institucional and insurance website with a lot of services to pick from!
+🏘️ Um site institucional de seguros com muitos serviços a sua disposição!
 
-*Read in another language: [Português](README.br.md).*
+*Leia em outra língua: [English](README.en.md).*
 
 <div align="center">
 
-   | [Notion](https://evonofy.notion.site/Sobre-O-Projeto-61b07f97bd934afb94690470796c88b7)    | 
-   | ----------------------------------------------------------------------------------------- |
+   | [Notion](hhttps://evonofy.notion.site/Sobre-O-Projeto-61b07f97bd934afb94690470796c88b7)    | 
+   | ------------------------------------------------------------------------------------------ |
 
 </div>
 
@@ -24,20 +23,20 @@
 
 </div>
 
-## `Table Of Contents` <!-- omit in toc -->
+## `Sumário` <!-- omit in toc -->
 
-- [`Features 🏷️`](#features-️)
-- [`Purpose 📜`](#purpose-)
-- [`Technologies And Packages 👨‍💻`](#technologies-and-packages-)
+- [`Recursos 🏷️`](#recursos-️)
+- [`Propósito 📜`](#propósito-)
+- [`Tecnologias E Pacotes 👨‍💻`](#tecnologias-e-pacotes-)
 
-### `Features 🏷️`
-- Custom form to determine what insurance the client needs;
-- Redirection to WPZ with pre-formatted text containing information of the selected insurance.
+### `Recursos 🏷️`
+- Formulário customizado que determina o seguro correto para o cliente;
+- Redirecionamento para o Zap com texto pré-formatado contendo informações do seguro escolhido.
 
-### `Purpose 📜`
-Make a easy-to-contract insurance insurance website for you, your family and businesses.
+### `Propósito 📜`
+Criar um site institucional que facilita a contratação de seguros para você, sua família e seu negócio.
 
-### `Technologies And Packages 👨‍💻`
+### `Tecnologias E Pacotes 👨‍💻`
 
 <div style="display: block"> 
    <a target="_blank" href=""><img align="center" alt="Astro" height="30" width="30" src="../.github/assets/Astro.png"></a>
@@ -47,7 +46,3 @@ Make a easy-to-contract insurance insurance website for you, your family and bus
 <br>
 
 - [Yarn]()
-
-<hr>
-
-[⬆ Back To Top](#-ituaçu-seguros)
