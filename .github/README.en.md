@@ -1,6 +1,6 @@
 <div align="center">
 
-   # [`🏘️ Ituaçu Seguros`](https://ituacu-seguros.vercel.app/) <!-- omit in toc --> 
+   # [🏘️ `Ituaçu Seguros`](https://ituacu-seguros.vercel.app/) <!-- omit in toc --> 
 
 
 </div>
@@ -16,7 +16,6 @@
 
 </div>
 
-
 <div align="center">
 
    ![Project Cover](assets/ProjectCoverTemplate.png)
@@ -26,18 +25,18 @@
 
 ## `Table Of Contents` <!-- omit in toc -->
 
-- [`Features 🏷️`](#features-️)
-- [`Purpose 📜`](#purpose-)
-- [`Technologies And Packages 👨‍💻`](#technologies-and-packages-)
+- [🏷️ `Features`](#️-features)
+- [📜 `Purpose`](#-purpose)
+- [👨‍💻 `Technologies And Packages`](#-technologies-and-packages)
 
-### `Features 🏷️`
+### 🏷️ `Features`
 - Custom form to determine what insurance the client needs;
 - Redirection to WPZ with pre-formatted text containing information of the selected insurance.
 
-### `Purpose 📜`
+### 📜 `Purpose`
 Make a easy-to-contract insurance insurance website for you, your family and businesses.
 
-### `Technologies And Packages 👨‍💻`
+### 👨‍💻 `Technologies And Packages`
 
 <div style="display: block"> 
    <a target="_blank" href=""><img align="center" alt="Astro" height="30" width="30" src="../.github/assets/Astro.png"></a>

@@ -1,6 +1,6 @@
 <div align="center">
 
-   # [`🏘️ Ituaçu Seguros`](https://ituacu-seguros.vercel.app/) <!-- omit in toc -->
+   # [🏘️ `Ituaçu Seguros`](https://ituacu-seguros.vercel.app/) <!-- omit in toc -->
 
 </div>
 
@@ -10,7 +10,7 @@
 
 <div align="center">
 
-   | [Notion](https://evonofy.notion.site/Sobre-O-Projeto-61b07f97bd934afb94690470796c88b7)    | 
+   | [Notion](https://evonofy.notion.site/Sobre-O-Projeto-61b07f97bd934afb94690470796c88b7)     | 
    | ------------------------------------------------------------------------------------------ |
 
 </div>
@@ -23,20 +23,20 @@
 
 </div>
 
-## `Sumário` <!-- omit in toc -->
+## 📖 `Sumário` <!-- omit in toc -->
 
-- [`Recursos 🏷️`](#recursos-️)
-- [`Propósito 📜`](#propósito-)
-- [`Tecnologias E Pacotes 👨‍💻`](#tecnologias-e-pacotes-)
+- [🏷️ `Recursos`](#️-recursos)
+- [📜 `Propósito`](#-propósito)
+- [👨‍💻 `Tecnologias E Pacotes`](#-tecnologias-e-pacotes)
 
-### `Recursos 🏷️`
+### 🏷️ `Recursos`
 - Formulário customizado que determina o seguro correto para o cliente;
 - Redirecionamento para o Zap com texto pré-formatado contendo informações do seguro escolhido.
 
-### `Propósito 📜`
+### 📜 `Propósito`
 Criar um site institucional que facilita a contratação de seguros para você, sua família e seu negócio.
 
-### `Tecnologias E Pacotes 👨‍💻`
+### 👨‍💻 `Tecnologias E Pacotes`
 
 <div style="display: block"> 
    <a target="_blank" href=""><img align="center" alt="Astro" height="30" width="30" src="../.github/assets/Astro.png"></a>
